@@ -2,9 +2,11 @@ import { useContext } from 'react'
 import { DataContext } from '../context/DataContext'
 import StarshipInfo from './StarshipInfo'
 import InfiniteScroll from 'react-infinite-scroll-component'
+import Pilots from './Pilots'
+import Films from './Films'
 
 const StarShipsList = () => {
-    const { query, setSelectedStarship, selectedStarship, starshipImage } = useContext(DataContext)
+    const { query, setSelectedStarship, selectedStarship } = useContext(DataContext)
     const {
         data,           // Datos de las naves espaciales
         fetchNextPage,  // Función para cargar la siguiente página
@@ -45,7 +47,11 @@ const StarShipsList = () => {
                     ))}
                 </ul>
             </InfiniteScroll>}
-            {selectedStarship && <StarshipInfo />}
+            {selectedStarship &&
+                <div>
+                    <StarshipInfo />  <Pilots />  <Films />
+                </div> 
+            }
         </div>
     )
 }
