@@ -5,10 +5,10 @@ import DataContextProvider from './context/DataContext.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { RouterProvider } from 'react-router-dom'
 import { createBrowserRouter } from "react-router-dom"
-import Home from "./Pages/Home";
-import App from "./Pages/App";
-import LogIn from './components/LogIn';
-import SignUp from './components/SignUp';
+import Home from "./Pages/Home"
+import App from "./Pages/App"
+import LogIn from './components/LogIn'
+import SignUp from './components/SignUp'
 import ProtectedRoute from './components/ProtectedRoute'
 
 export const router = createBrowserRouter ([
@@ -32,6 +32,7 @@ export const router = createBrowserRouter ([
     path: "/SignUp",
     element: <SignUp />
   },
+
 ])
 
 

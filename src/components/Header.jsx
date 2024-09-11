@@ -1,6 +1,6 @@
 import titleStarWars from '/public/titleStarWars.jpg';
 import { Link } from "react-router-dom";
-import { useContext } from 'react';
+import { useContext, useEffect  } from 'react';
 import { DataContext } from '../context/DataContext';
 import { getAuth } from "firebase/auth"
 import appFirebase from '../credenciales'
@@ -9,6 +9,13 @@ import appFirebase from '../credenciales'
 export default function Header() {
     const { usuario, setUsuario } = useContext(DataContext);
     const auth = getAuth(appFirebase)
+
+    useEffect(() => {
+        const currentUser = auth.currentUser;
+        if (currentUser) {
+            setUsuario(currentUser);
+        }
+    }, [auth, setUsuario]);
 
 
     const logOut = () => {

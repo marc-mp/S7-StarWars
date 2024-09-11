@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { DataContext } from '../context/DataContext'
 import StarshipInfo from './StarshipInfo'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 const StarShipsList = () => {
-    const { query, setSelectedStarship, selectedStarship, starshipImages } = useContext(DataContext)
+    const { query, setSelectedStarship, selectedStarship, starshipImage } = useContext(DataContext)
     const {
         data,           // Datos de las naves espaciales
         fetchNextPage,  // Función para cargar la siguiente página
@@ -18,6 +18,8 @@ const StarShipsList = () => {
     if (status === 'error') return <div>Error: {query.error.message}</div>
     
     if (!data) return null // Si no hay datos todavía, no intentamos renderizar la lista
+    
+    
 
     return (
         <div>
@@ -30,16 +32,16 @@ const StarShipsList = () => {
             >
                 <ul>
                     {data.pages.map((page, index) => (
-                        <React.Fragment key={index}>
+                        <div key={index}>
                             {page.results.map((starship) => (
-                                <li key={starship.name} onClick={() => setSelectedStarship({...starship, imageUrl: starshipImages[starship.name]})}>
+                                <li key={starship.name} onClick={() => setSelectedStarship({...starship})}>
                                     <div className="bg-neutral-800 my-3 mx-40 p-3 text-gray-400 cursor-pointer">
                                         <h3 className="font-bold">{starship.name.toUpperCase()}</h3>
                                         <p>{starship.model}</p>
                                     </div>
                                 </li>
                             ))}
-                        </React.Fragment>
+                        </div>
                     ))}
                 </ul>
             </InfiniteScroll>}

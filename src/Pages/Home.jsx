@@ -1,9 +1,15 @@
 import fondoHome3 from '/public/fondoHome3.webp'
 import { Link } from 'react-router-dom'
 import Menu from '../components/Menu'
+import { useContext } from 'react'
+import { DataContext } from '../context/DataContext'
+
 
 
 export default function Home(){
+
+    const { setSelectedStarship } = useContext(DataContext)
+    setSelectedStarship(null)
     
     
     return (

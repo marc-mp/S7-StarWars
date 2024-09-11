@@ -1,13 +1,16 @@
-import { useContext} from 'react'
+import { useContext } from 'react'
 import { DataContext } from '../context/DataContext'
 
 
 const StarshipInfo = () => {
 
-  const {selectedStarship, setSelectedStarship} = useContext(DataContext)
+  const {selectedStarship, setSelectedStarship, setStarshipImage, starshipImage } = useContext(DataContext)
   console.log(selectedStarship)
+  console.log(selectedStarship.url)
+  setStarshipImage((`https://starwars-visualguide.com/assets/img/starships/${selectedStarship.url.split("/")[5]}.jpg`))
 
-  
+
+
   return (
       <div className="m-3 p-3" >
         <div>
@@ -19,7 +22,7 @@ const StarshipInfo = () => {
           </div>
           <div className="card card-side bg-base-100 shadow-xl grid grid-cols-2 ">
             <figure>
-              <img src={selectedStarship.imageUrl} alt={selectedStarship.name} />
+              <img src={starshipImage} alt={selectedStarship.name} />
             </figure>
             <div className="card-body bg-neutral-800 p-3  border-s-2 border-red-500">
               <h2 className="card-title text-2xl">{selectedStarship.name.toUpperCase()}</h2>
@@ -30,8 +33,6 @@ const StarshipInfo = () => {
               <p>Length: {selectedStarship.length}</p>
               <p>Max Atmosphering Speed: {selectedStarship.max_atmosphering_speed}</p>
               <p>Crew: {selectedStarship.crew}</p>
-              {/* <p>Passengers: {starship.passengers}</p>
-              <p>Cargo Capacity: {starship.cargo_capacity}</p> */}
             </div>
           </div>
         </div>
