@@ -23,5 +23,12 @@
 SWAPI: API pública de Star Wars para obtener datos detallados sobre las naves espaciales, pilotos y películas.
 Star Wars Visual Guide: Utilizada para obtener imágenes de alta calidad de las naves espaciales y otros elementos visuales del universo Star Wars.
 
-
+## Geting Started
+```
+$ npm create vite@latest my-proyect
+select framework:    react
+select variant:      javascript + SWC
+$ cd my-project
+$ npm install
+$ npm run dev
 
