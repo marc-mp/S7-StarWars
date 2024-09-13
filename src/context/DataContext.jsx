@@ -8,6 +8,10 @@ export const DataContext = createContext()
 
 export default function DataContextProvider({ children }) {
 
+    const [selectedStarship, setSelectedStarship] = useState(null)
+    const [usuario, setUsuario] = useState(null)
+
+    
     const fetchStarships = async ({ pageParam = 1 }) => {
         const response = await fetch(`https://swapi.dev/api/starships/?page=${pageParam}`)
         console.log(response)
@@ -18,6 +22,7 @@ export default function DataContextProvider({ children }) {
         console.log(data)
         return data
     }
+
 
     // scroll infinito
     const query = useInfiniteQuery({
@@ -39,21 +44,15 @@ export default function DataContextProvider({ children }) {
         const auth = getAuth(appFirebase);
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
-                setUsuario(user) // Si el usuario está autenticado, lo guardamos
+                setUsuario(user) // Si el usuario está logueado, lo guardamos
             } else {
-                setUsuario(null) // Si no está autenticado, establecemos null
+                setUsuario(null) // Sino usuario debe ser null
             }
         })
 
-        return () => unsubscribe(); // Cleanup al desmontar el componente
+        return () => unsubscribe()
     }, [])
 
-
-
-
-    const [selectedStarship, setSelectedStarship] = useState(null)
-    const [usuario, setUsuario] = useState(null)
-    const [ starshipImage, setStarshipImage ] = useState(null)
 
 
 
@@ -63,7 +62,6 @@ export default function DataContextProvider({ children }) {
         selectedStarship, setSelectedStarship,
         query,
         usuario, setUsuario,
-        starshipImage, setStarshipImage
         
      }}>
       {children}

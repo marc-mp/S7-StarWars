@@ -1,10 +1,10 @@
+
+import titleStarWars from '/public/titleStarWars.jpg';
 import { useState } from 'react'
 import appFirebase from '../credenciales.js'
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-// import { useContext } from 'react'
-// import { DataContext } from '../context/DataContext'
 
 
 
@@ -40,6 +40,10 @@ const SignUp = () => {
                     <button className='p-1 '>X</button>
                 </Link>
             </div>
+            <div className='flex items-center justify-center'>
+                <img src={titleStarWars} alt="Star Wars title" className='h-48 justify-center' />
+            </div>
+
             <label className="input input-bordered flex items-center gap-2 my-3">
                 <input type="text" className="grow" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
             </label>
@@ -52,6 +56,13 @@ const SignUp = () => {
             <button className="border-2 bg-yellow-300 border-yellow-300 text-black font-bold my-2 py-1 px-2" onClick={handleSignUp}>
                 Registrarse
             </button>
+            <div className="mt-4">
+                <p className="text-gray-400">
+                    ¿tienes una cuenta? 
+                    <Link to="/Login" className="text-blue-500 ml-2">Entrar</Link>
+                </p>
+            </div>
+
         </div>
     )
 }

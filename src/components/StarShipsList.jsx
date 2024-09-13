@@ -22,6 +22,7 @@ const StarShipsList = () => {
     if (!data) return null // Si no hay datos todavía, no intentamos renderizar la lista
     
     
+    
 
     return (
         <div>

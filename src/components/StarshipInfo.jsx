@@ -2,19 +2,22 @@ import { useContext } from 'react'
 import { DataContext } from '../context/DataContext'
 
 
+
 const StarshipInfo = () => {
 
-  const {selectedStarship, setSelectedStarship, setStarshipImage, starshipImage } = useContext(DataContext)
+  const {selectedStarship, setSelectedStarship } = useContext(DataContext)
   console.log(selectedStarship)
   console.log(selectedStarship.url)
-  setStarshipImage((`https://starwars-visualguide.com/assets/img/starships/${selectedStarship.url.split("/")[5]}.jpg`))
-
+  
+  const cerrarInfoStarship = () => {
+    setSelectedStarship(null)
+  }
 
 
   return (
-      <div className="m-3 p-3" >
+      <div className="mx-3 my-10 p-3" >
         <div>
-          <div className=' flex justify-end mb-2' onClick={() => setSelectedStarship(null)}>
+          <div className=' flex justify-end mb-2' onClick={cerrarInfoStarship}>
             <button className='border-2 border-neutral-800 p-1 '>X</button>
           </div>
           <div className='text-2xl border-y-2 border-neutral-600 mb-4'>
@@ -22,7 +25,7 @@ const StarshipInfo = () => {
           </div>
           <div className="card card-side bg-base-100 shadow-xl grid grid-cols-2 ">
             <figure>
-              <img src={starshipImage} alt={selectedStarship.name} />
+              <img src={`https://starwars-visualguide.com/assets/img/starships/${selectedStarship.url.split("/")[5]}.jpg`} alt={selectedStarship.name} />
             </figure>
             <div className="card-body bg-neutral-800 p-3  border-s-2 border-red-500">
               <h2 className="card-title text-2xl">{selectedStarship.name.toUpperCase()}</h2>

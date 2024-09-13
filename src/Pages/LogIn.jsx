@@ -1,9 +1,10 @@
+import titleStarWars from '/public/titleStarWars.jpg';
 import { useState } from 'react'
 import appFirebase from '../credenciales.js'
 import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'
 import { Link, useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
-import { DataContext } from '../context/DataContext'
+import { DataContext } from '../context/DataContext.jsx'
 
 
 const auth = getAuth(appFirebase)
@@ -56,6 +57,10 @@ const LogIn = () => {
                     <button className="p-1">X</button>
                 </Link>
             </div>
+            <div className='flex items-center justify-center'>
+                <img src={titleStarWars} alt="Star Wars title" className='h-48 justify-center' />
+            </div>
+
             <label className="input input-bordered flex items-center gap-2 my-3">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

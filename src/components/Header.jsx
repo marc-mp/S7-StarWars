@@ -7,15 +7,15 @@ import appFirebase from '../credenciales'
 
 
 export default function Header() {
-    const { usuario, setUsuario } = useContext(DataContext);
+    const { usuario, setUsuario } = useContext(DataContext)
     const auth = getAuth(appFirebase)
 
     useEffect(() => {
-        const currentUser = auth.currentUser;
+        const currentUser = auth.currentUser
         if (currentUser) {
-            setUsuario(currentUser);
+            setUsuario(currentUser)
         }
-    }, [auth, setUsuario]);
+    }, [auth, setUsuario])
 
 
     const logOut = () => {
