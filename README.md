@@ -3,6 +3,7 @@
 
 ¡Bienvenido a la aplicación Star Wars Starships! Esta aplicación en React permite a los usuarios ver e interactuar con información sobre naves espaciales del universo Star Wars. Los usuarios pueden iniciar sesión, registrarse y explorar detalles sobre varias naves espaciales, incluidos sus pilotos y las películas en las que aparecieron.
 
+
 ## Funcionalidades
 
 - **Página de Inicio**: Página de bienvenida con navegación hacia la sección de Naves Espaciales.
