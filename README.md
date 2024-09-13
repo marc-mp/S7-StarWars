@@ -30,29 +30,43 @@ El proyecto utiliza las siguientes tecnologías:
 SWAPI: API pública de Star Wars para obtener datos detallados sobre las naves espaciales, pilotos y películas.
 Star Wars Visual Guide: Utilizada para obtener imágenes de alta calidad de las naves espaciales y otros elementos visuales del universo Star Wars.
 
+## Geting Started
 
-## Estado de Desarrollo
-Este proyecto está en desarrollo y se pueden agregar más funcionalidades, como mejoras en la UI/UX, manejo avanzado de errores, y más detalles en la información visual y técnica de las naves espaciales, pilotos y películas.
+$ npm create vite@latest my-proyect
+select framework:    react
+select variant:      javascript + SWC
+$ cd my-project
+$ npm install
+$ npm run dev
 
-## Instalación y Configuración
+Install Tailwind
+$ npm install -D tailwindcss postcss autoprefixer
+$ npx tailwindcss init -p
 
-1. Clona este repositorio en tu máquina local:
+🗋 talilwind.config.js
 
-   ```bash
-        git clone https://github.com/marc-mp/S7-StarWars.git
+ content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+ 
+🗋 index.css
 
- 2. Instala las dependencias del proyecto:
-        npm install
-  
- 3. Configura Firebase:
-        Crea un proyecto en Firebase y habilita la autenticación por correo electrónico/contraseña.
-        Copia tu configuración de Firebase y añádela en un archivo .env con el siguiente formato:
-        VITE_FIREBASE_API_KEY=your_api_key
-        VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-        VITE_FIREBASE_PROJECT_ID=your_project_id
-        
- 4. Ejecuta el proyecto en modo de desarrollo:
-        npm run dev
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+Install DaisyUI
+$ npm i daisyui
+
+🗋 talilwind.config.js
+
+import daisyui from 'daisyui';
+  plugins: [
+    daisyui,
+  ],
+
+Install React Router
+$ npm install react-router-dom
+
+install firebase
+$ npm install firebase
 
 
