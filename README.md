@@ -1,5 +1,4 @@
-# Star Wars 
-<img src="https://infonegocios.info/content/images/2023/10/24/415577/conversions/star-wars-impactmkt-medium-size.jpg" >
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg" >
 
 
 ¡Bienvenido a la aplicación Star Wars Starships! Esta aplicación en React permite a los usuarios ver e interactuar con información sobre naves espaciales del universo Star Wars. Los usuarios pueden iniciar sesión, registrarse y explorar detalles sobre varias naves espaciales, incluidos sus pilotos y las películas en las que aparecieron.
