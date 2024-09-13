@@ -1,11 +1,9 @@
-
 import titleStarWars from '/public/titleStarWars.jpg';
 import { useState } from 'react'
 import appFirebase from '../credenciales.js'
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-
 
 
 const auth = getAuth(appFirebase)
@@ -33,36 +31,57 @@ const SignUp = () => {
             })
     }
 
+   
     return (
-        <div className='mx-36 mt-10 border-2 border-neutral-800 p-9'>
-            <div className='flex justify-end mb-2'>
+        <div className='mx-4 my-5 sm:mx-8 md:mx-12 lg:mx-36 border-2 border-neutral-800 p-4 sm:p-6 md:p-8 lg:p-9 '>
+            <div className='flex justify-end'>
                 <Link to={"/"}>
-                    <button className='p-1 '>X</button>
+                    <button className='p-2 text-lg font-semibold'>X</button>
                 </Link>
             </div>
-            <div className='flex items-center justify-center'>
-                <img src={titleStarWars} alt="Star Wars title" className='h-48 justify-center' />
+            <div className='flex items-center justify-center mb-6'>
+                <img src={titleStarWars} alt="Star Wars title" className='h-24 sm:h-28 md:h-32 lg:h-36' />
             </div>
 
             <label className="input input-bordered flex items-center gap-2 my-3">
-                <input type="text" className="grow" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                <input 
+                    type="text" 
+                    className="grow px-2 py-1 text-base sm:text-lg" 
+                    placeholder="Name" 
+                    value={name} 
+                    onChange={(e) => setName(e.target.value)} 
+                />
             </label>
             <label className="input input-bordered flex items-center gap-2 my-3">
-                <input type="text" className="grow" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input 
+                    type="text" 
+                    className="grow px-2 py-1 text-base sm:text-lg" 
+                    placeholder="Email" 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                />
             </label>
             <label className="input input-bordered flex items-center gap-2 my-3">
-                <input type="password" className="grow" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <input 
+                    type="password" 
+                    className="grow px-2 py-1 text-base sm:text-lg" 
+                    placeholder="Password" 
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)} 
+                />
             </label>
-            <button className="border-2 bg-yellow-300 border-yellow-300 text-black font-bold my-2 py-1 px-2" onClick={handleSignUp}>
+            <button 
+                className="border-2 bg-yellow-300 border-yellow-300 text-black font-bold my-2 py-2 px-4 text-sm sm:text-base" 
+                onClick={handleSignUp}
+            >
                 Registrarse
             </button>
-            <div className="mt-4">
+            <div className="mt-4 text-sm sm:text-base">
                 <p className="text-gray-400">
-                    ¿tienes una cuenta? 
-                    <Link to="/Login" className="text-blue-500 ml-2">Entrar</Link>
+                    ¿Tienes una cuenta? 
+                    <Link to="/LogIn" className="text-blue-500 ml-2">Entrar</Link>
                 </p>
             </div>
-
         </div>
     )
 }

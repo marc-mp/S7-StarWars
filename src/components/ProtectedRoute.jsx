@@ -10,7 +10,7 @@ const ProtectedRoute = ({ children }) => {
         return <Navigate to="/LogIn" />
     }
 
-    // Si hay un usuario logueado, accederemos a la ruta protegida, en este caso componente StarShipsList
+    // Si hay un usuario logueado, accedemos a la ruta protegida
     return children
 };
 

@@ -32,7 +32,7 @@ const LogIn = () => {
             })
     }
 
-    // Función para enviar email de recuperación de contraseña
+    // recuperar contraseña
     const handlePasswordReset = () => {
         if (!email) {
             alert('Por favor, ingrese su correo electrónico para restablecer la contraseña.');
@@ -51,30 +51,27 @@ const LogIn = () => {
     }
 
     return (
-        <div className='mx-36 mt-10 border-2 border-neutral-800 p-9'>
-            <div className="flex justify-end mb-2">
+        <div className='mx-4 sm:mx-8 md:mx-12 my-5 lg:mx-36  border-2 border-neutral-800 p-4 sm:p-6 md:p-8 lg:p-9'>
+            <div className="flex justify-end">
                 <Link to={"/"}>
-                    <button className="p-1">X</button>
+                    <button className="p-1 text-lg font-semibold">X</button>
                 </Link>
             </div>
-            <div className='flex items-center justify-center'>
-                <img src={titleStarWars} alt="Star Wars title" className='h-48 justify-center' />
+            <div className='flex items-center justify-center mb-6'>
+                <img src={titleStarWars} alt="Star Wars title" className='h-24 sm:h-28 md:h-32 lg:h-36' />
             </div>
-
             <label className="input input-bordered flex items-center gap-2 my-3">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
                     fill="currentColor"
                     className="h-4 w-4 opacity-70">
-                    <path
-                    d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
-                    <path
-                    d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
+                    <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
+                    <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
                 </svg>
                 <input 
                     type="text" 
-                    className="grow " 
+                    className="grow px-2 py-1 text-base sm:text-lg" 
                     placeholder="Email" 
                     value={email} 
                     onChange={(e) => setEmail(e.target.value)} 
@@ -86,26 +83,20 @@ const LogIn = () => {
                     viewBox="0 0 16 16"
                     fill="currentColor"
                     className="h-4 w-4 opacity-70">
-                    <path
-                    fillRule="evenodd"
-                    d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
-                    clipRule="evenodd" />
+                    <path fillRule="evenodd" d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z" clipRule="evenodd" />
                 </svg>
                 <input 
                     type="password" 
-                    className="grow" 
+                    className="grow px-2 py-1 text-base sm:text-lg" 
                     placeholder="Password" 
                     value={password} 
                     onChange={(e) => setPassword(e.target.value)} 
                 />
             </label>
-
-            <button className="border-2 bg-yellow-300 border-yellow-300 text-black font-bold my-2 py-1 px-2" onClick={handleLogIn}>
+            <button className="border-2 bg-yellow-300 border-yellow-300 text-black font-bold my-2 py-2 px-4 text-sm sm:text-base" onClick={handleLogIn}>
                 Iniciar sesión
             </button>
-
-            {/* recuperar la contraseña */}
-            <div className="mt-2">
+            <div className="mt-2 text-sm sm:text-base">
                 <p className="text-gray-400">
                     ¿Olvidaste tu contraseña? 
                     <button onClick={handlePasswordReset} className="text-blue-500 ml-2">
@@ -114,17 +105,14 @@ const LogIn = () => {
                 </p>
                 {resetEmailSent && <p className="text-green-500 mt-2">Correo de recuperación enviado.</p>}
             </div>
-
-            {/* Link para redirigir a la página de registro */}
-            <div className="mt-4">
+            <div className="mt-4 text-sm sm:text-base">
                 <p className="text-gray-400">
                     ¿No tienes una cuenta? 
                     <Link to="/SignUp" className="text-blue-500 ml-2">Regístrate aquí</Link>
                 </p>
             </div>
-
         </div>
-    );
+    )
 }
 
 export default LogIn;

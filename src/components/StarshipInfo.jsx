@@ -2,16 +2,15 @@ import { useContext } from 'react'
 import { DataContext } from '../context/DataContext'
 
 
-
 const StarshipInfo = () => {
 
   const {selectedStarship, setSelectedStarship } = useContext(DataContext)
-  console.log(selectedStarship)
-  console.log(selectedStarship.url)
   
   const cerrarInfoStarship = () => {
     setSelectedStarship(null)
   }
+
+  console.log(selectedStarship.url)
 
 
   return (
@@ -23,7 +22,7 @@ const StarshipInfo = () => {
           <div className='text-2xl border-y-2 border-neutral-600 mb-4'>
             <h2>STARSHIP</h2>
           </div>
-          <div className="card card-side bg-base-100 shadow-xl grid grid-cols-2 ">
+          <div className="card card-side bg-base-100 shadow-xl  sm:flex flex-col md:grid grid-cols-2 ">
             <figure>
               <img src={`https://starwars-visualguide.com/assets/img/starships/${selectedStarship.url.split("/")[5]}.jpg`} alt={selectedStarship.name} />
             </figure>
