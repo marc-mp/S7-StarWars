@@ -1,35 +1,42 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg" >
 
 
-¡Bienvenido a la aplicación Star Wars Starships! Esta aplicación en React permite a los usuarios ver e interactuar con información sobre naves espaciales del universo Star Wars. Los usuarios pueden iniciar sesión, registrarse y explorar detalles sobre varias naves espaciales, incluidos sus pilotos y las películas en las que aparecieron.
+Welcome to the Star Wars Starships app! This app in React allows users to view and interact with information about starships from the Star Wars universe. Users can log in, register, and explore details about various starships, including their pilots and the movies they appeared in.
 
 
-## Funcionalidades
+## Features
 
-- **Página de Inicio**: Página de bienvenida con navegación hacia la sección de Naves Espaciales.
-- **Lista de Naves Espaciales**: Lista de naves espaciales con desplazamiento infinito.
-- **Detalles de Naves Espaciales**: Vista detallada de una nave espacial seleccionada, incluidos los pilotos y las películas.
-- **Autenticación**: Inicio de sesión y registro de usuarios con Firebase Authentication.
-- **Diseño Adaptativo**: La aplicación está diseñada para ser adaptativa y accesible.
+- **Home Page**: Welcome page with navigation to the Spaceships section.
+- **Spaceship List**: Infinitely scrolling list of spaceships.
+- **Spaceship Details**: Detailed view of a selected spaceship, including pilots and movies.
+- **Authentication**: User login and registration with Firebase Authentication.
+- **Responsive Design**: The app is designed to be responsive and accessible.
 
-## Tecnologías Utilizadas
+## Technologies and tools
 
-- **React**: Biblioteca de JavaScript para construir interfaces de usuario.
-- **Firebase**: Servicio de backend para autenticación.
-- **React Query**: Biblioteca para la gestión de datos y estado.
-- **Tailwind CSS**: Framework de CSS utilitario para el estilo.
-- **React Router**: Enrutamiento declarativo para React.js.
+- **React**
+- **Vite**
+- **Javascript**
+- **CSS**
+- **Tailwind CSS**
+- **Firebase**
+- **React Query**
+- **React Router**
 
  
-## APIs Utilizadas:
-SWAPI: API pública de Star Wars para obtener datos detallados sobre las naves espaciales, pilotos y películas.
-Star Wars Visual Guide: Utilizada para obtener imágenes de alta calidad de las naves espaciales y otros elementos visuales del universo Star Wars.
+## APIs used:
+
+SWAPI: Public Star Wars API for detailed data on starships, pilots, and movies.
+Star Wars Visual Guide: Used to obtain high-quality images of starships and other visual elements from the Star Wars universe.
 
 ## Geting Started
 ```
-$ npm create vite@latest my-proyect
-select framework:    react
-select variant:      javascript + SWC
-$ cd my-project
-$ npm install
-$ npm run dev
+1. Clone the repository:
+   git clone https://github.com/marc-mp/S7-StarWars.git
+   cd S7-StarWars
+
+2. Install dependencies:
+   npm install 
+
+3. Start the development server:
+   npm run dev 
