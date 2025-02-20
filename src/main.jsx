@@ -9,7 +9,9 @@ import Home from "./Pages/Home"
 import App from "./Pages/App"
 import LogIn from './Pages/LogIn'
 import SignUp from './Pages/SignUp.jsx'
-import ProtectedRoute from './components/ProtectedRoute'
+import ProtectedRoute from './components/ProtectedRoute';
+
+
 
 export const router = createBrowserRouter ([
   {
